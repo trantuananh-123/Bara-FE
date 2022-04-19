@@ -1,0 +1,567 @@
+<div class="sidebar-cart-active">
+    <div class="sidebar-cart-all">
+        <a class="cart-close" href="#"><i class="icon_close"></i> Close </a>
+        <div class="cart-content">
+            <h3>Cart</h3>
+            <ul>
+                <li class="single-product-cart">
+                    <div class="cart-img">
+                        <a routerLink="/product"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                    </div>
+                    <div class="cart-title">
+                        <h4><a href="product-details.html">Obey T-shirt With Tiger Print</a></h4>
+                        <span> 1 × $30.00 </span>
+                    </div>
+                    <div class="cart-delete">
+                        <a href="#"><i class="icon_close"></i></a>
+                    </div>
+                </li>
+                <li class="single-product-cart">
+                    <div class="cart-img">
+                        <a href="product-details.html"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
+                    </div>
+                    <div class="cart-title">
+                        <h4><a href="product-details.html">Satchel In Washed Navy Canvas </a></h4>
+                        <span> 1 × $12.00 </span>
+                    </div>
+                    <div class="cart-delete">
+                        <a href="#"><i class="icon_close"></i></a>
+                    </div>
+                </li>
+                <li class="single-product-cart">
+                    <div class="cart-img">
+                        <a href="product-details.html"><img src="assets/images/cart/cart-3.jpg" alt=""></a>
+                    </div>
+                    <div class="cart-title">
+                        <h4><a href="product-details.html">The North Face T-Shirt</a></h4>
+                        <span> 1 × $25.00 </span>
+                    </div>
+                    <div class="cart-delete">
+                        <a href="#"><i class="icon_close"></i></a>
+                    </div>
+                </li>
+            </ul>
+            <div class="cart-total">
+                <h4>Subtotal: <span>$67.00</span></h4>
+            </div>
+            <div class="cart-checkout-btn">
+                <a class="cart" href="cart.html">view cart <i class="ion-ios-arrow-right"></i></a>
+                <a class="checkout" href="checkout.html">checkout <i class="ion-ios-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shop-area pt-115 pb-120">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="shop-page-wrap shop-page-grid-4">
+                    <div class="shop-top-bar mb-40">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-12 col-sm-6 mb-10">
+                                <div class="shop-total-product">
+                                    <p><span> 17</span> products found</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-12 col-sm-6 mb-10">
+                                <div class="shop-sort-by shop-sort-by-modify">
+                                    <span>Sort By </span>
+                                    <select class="nice-select-style-1" name="sortBy" [(ngModel)]="filter.sortBy"
+                                        (change)="listProduct()">
+                                        <option>Default</option>
+                                        <option>Name A - Z</option>
+                                        <option>Name Z - A</option>
+                                        <option>Price High to Low</option>
+                                        <option>Price Low to High</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-12 col-sm-6 mb-10">
+                                <div class="shop-page-tab-wrap shop-grid-res">
+                                    <span>View</span>
+                                    <div class="shop-page-tab nav">
+                                        <a class="active" href="#pro-1" data-bs-toggle="tab"><i
+                                                class="ion-android-apps"></i> </a>
+                                        <a href="#pro-2" data-bs-toggle="tab" class=""> <i class="ion-android-menu"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="pro-1" class="tab-pane active product-responsive-style">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12"
+                                    *ngFor="let p of filterPro | paginate: config1">
+                                    <div class=" product-wrap mb-35">
+                                        <div class="product-img-2 mb-25">
+                                            <a [routerLink]="['/product', p.productId]">
+                                                <img src="{{p.productImgs[0]}}" alt="">
+                                            </a>
+                                            <div class="product-action-2 tooltip-style tooltip-style-modify">
+                                                <a routerLink="/product" aria-label="Select options"><i
+                                                        class="ion-plus"></i></a>
+                                                <button aria-label="Add To Wishlist"><i
+                                                        class="ion-ios-heart"></i></button>
+                                                <a aria-label="Quick View" data-bs-toggle="modal"
+                                                    href="#exampleModal"><i class="ion-ios-eye-outline"></i></a>
+                                                <button aria-label="Compare"><i class="ion-stats-bars"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-2">
+                                            <h3><a [routerLink]="['/product', p.productId]">{{p.productName}}</a></h3>
+                                            <div class="product-price-2 product-price-2-left">
+                                                <span>{{p.productPriceIn | currency}} - {{p.productPriceOut |
+                                                    currency}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Product Modal start -->
+                                    <div class="modal modal-style" id="exampleModal" tabindex="-1" role="dialog">
+                                        <div class="modal-overlay">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <a href="#" class="close" data-bs-dismiss="modal"
+                                                            aria-label="Close"><i class="icon_close"></i></a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row gx-0">
+                                                            <div class="col-lg-5 col-md-5 col-12">
+                                                                <div class="product-details-img-wrap">
+                                                                    <div
+                                                                        class="swiper-container product-details-big-img-slider product-details-big-img-style">
+                                                                        <div class="swiper-wrapper">
+                                                                            <div *ngFor="let img of p.productImgs"
+                                                                                class="swiper-slide">
+                                                                                <div class="product-details-big-img">
+                                                                                    <img src="{{img}}" alt="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="product-details-next product-details-nav-style">
+                                                                            <i class="arrow_carrot-right"></i>
+                                                                        </div>
+                                                                        <div
+                                                                            class="product-details-prev product-details-nav-style">
+                                                                            <i class="arrow_carrot-left"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-7 col-12">
+                                                                <div class="product-details-content quickview-content">
+                                                                    <h2>Satchel In Washed Navy Canvas</h2>
+                                                                    <div class="product-details-review-wrap">
+                                                                        <div class="product-details-review">
+                                                                            <div class="product-rating">
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star gray"></i>
+                                                                            </div>
+                                                                            <span>3 reviews</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="product-details-price">
+                                                                        <span class="old-price">$24.00</span>
+                                                                        <span class="new-price">$12.00</span>
+                                                                    </div>
+                                                                    <p>The main compartment of our bag is made using
+                                                                        only two large pieces of 100%
+                                                                        full-grain boot leather. Two outside pockets for
+                                                                        quick access to gear. Shoulder
+                                                                        straps are adjustable from both ends and flair
+                                                                        out at the bottom to accommodate all
+                                                                        body types. Rivets at all stress points</p>
+                                                                    <div
+                                                                        class="product-details-quality-cart product-details-content-border">
+                                                                        <div class="product-quality">
+                                                                            <input
+                                                                                class="cart-plus-minus-box input-text qty text"
+                                                                                name="qtybutton" value="1">
+                                                                        </div>
+                                                                        <div class="product-details-cart">
+                                                                            <a href="#"><i class="ion-plus"></i> Add to
+                                                                                cart</a>
+                                                                        </div>
+                                                                        <div class="product-details-wishlist">
+                                                                            <a href="#"><i
+                                                                                    class="ion-ios-heart"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Product Modal end -->
+
+                                </div>
+
+                            </div>
+                            <pagination-template class="text-center" #p1="paginationApi" [id]="config1.id!"
+                                (pageChange)="config1.currentPage = $event; backToPosition()">
+
+
+                                <div class="custom-pagination">
+                                    <div class="pagination-previous" [class.disabled]="p1.isFirstPage()">
+                                        <a *ngIf="!p1.isFirstPage()" (click)="p1.previous(); backToPosition()">
+                                        </a>
+                                    </div>
+
+                                    <div *ngFor="let page of p1.pages" [class.current]="p1.getCurrent() === page.value">
+                                        <a (click)="p1.setCurrent(page.value); backToPosition()"
+                                            *ngIf="p1.getCurrent() !== page.value">
+                                            <span>{{ page.label }}</span>
+                                        </a>
+                                        <div *ngIf="p1.getCurrent() === page.value">
+                                            <span>{{ page.label }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pagination-next" [class.disabled]="p1.isLastPage()">
+                                        <a *ngIf="!p1.isLastPage()" (click)="p1.next(); backToPosition()"></a>
+                                    </div>
+                                </div>
+
+                            </pagination-template>
+
+                        </div>
+                        <div id="pro-2" class="tab-pane">
+                            <div class="row">
+                                <div class="col-12" *ngFor="let p of filterPro | paginate: config2">
+                                    <div class="shop-list-wrap product-wrap product-responsive-style mb-50">
+                                        <div class="row align-items-center">
+                                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="product-img">
+                                                    <a href="product-details.html">
+                                                        <img class="default-img" src="{{p.productImgs[0]}}" alt="">
+                                                    </a>
+                                                    <div class="product-badge">
+                                                        <span class="red">Sale</span>
+                                                    </div>
+                                                    <div class="product-list-quickview tooltip-style">
+                                                        <a class="test" aria-label="Quick View" data-bs-toggle="modal"
+                                                            href="#exampleModal1"><i
+                                                                class="ion-ios-eye-outline"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-8 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                <div class="product-content product-list-content">
+                                                    <h3><a href="product-details.html">{{p.productName}}</a></h3>
+                                                    <div class="product-rating">
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star gray"></i>
+                                                    </div>
+                                                    <div class="product-price product-price-left">
+                                                        <span class="old-price">{{p.productPriceIn | currency}}</span>
+                                                        <span class="new-price">{{p.productPriceOut |
+                                                            currency}}</span>
+                                                    </div>
+                                                    <p [innerHtml]="p.productDescription | ckeditorPipe">
+                                                    </p>
+                                                    <div class="product-list-action">
+                                                        <div class="product-list-cart">
+                                                            <a href="product-details.html"><i
+                                                                    class="ion-plus"></i>Select
+                                                                options</a>
+                                                        </div>
+                                                        <div class="product-list-wishlist tooltip-style">
+                                                            <button aria-label="Add To Wishlist"><i
+                                                                    class="ion-ios-heart"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Product Modal start -->
+                                    <div class="modal modal-style" id="exampleModal1" tabindex="-1" role="dialog">
+                                        <div class="modal-overlay">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <a href="#" class="close" data-bs-dismiss="modal"
+                                                            aria-label="Close"><i class="icon_close"></i></a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row gx-0">
+                                                            <div class="col-lg-5 col-md-5 col-12">
+                                                                <div class="product-details-img-wrap">
+                                                                    <div
+                                                                        class="swiper-container product-details-big-img-slider product-details-big-img-style">
+                                                                        <div class="swiper-wrapper">
+                                                                            <div *ngFor="let img of p.productImgs"
+                                                                                class="swiper-slide">
+                                                                                <div class="product-details-big-img">
+                                                                                    <img src="{{img}}" alt="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="product-details-next product-details-nav-style">
+                                                                            <i class="arrow_carrot-right"></i>
+                                                                        </div>
+                                                                        <div
+                                                                            class="product-details-prev product-details-nav-style">
+                                                                            <i class="arrow_carrot-left"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-7 col-12">
+                                                                <div class="product-details-content quickview-content">
+                                                                    <h2>Satchel In Washed Navy Canvas</h2>
+                                                                    <div class="product-details-review-wrap">
+                                                                        <div class="product-details-review">
+                                                                            <div class="product-rating">
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star"></i>
+                                                                                <i class="ion-android-star gray"></i>
+                                                                            </div>
+                                                                            <span>3 reviews</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="product-details-price">
+                                                                        <span class="old-price">$24.00</span>
+                                                                        <span class="new-price">$12.00</span>
+                                                                    </div>
+                                                                    <p>The main compartment of our bag is made using
+                                                                        only two large pieces of 100%
+                                                                        full-grain boot leather. Two outside pockets for
+                                                                        quick access to gear. Shoulder
+                                                                        straps are adjustable from both ends and flair
+                                                                        out at the bottom to accommodate all
+                                                                        body types. Rivets at all stress points</p>
+                                                                    <div
+                                                                        class="product-details-quality-cart product-details-content-border">
+                                                                        <div class="product-quality">
+                                                                            <input
+                                                                                class="cart-plus-minus-box input-text qty text"
+                                                                                name="qtybutton" value="1">
+                                                                        </div>
+                                                                        <div class="product-details-cart">
+                                                                            <a href="#"><i class="ion-plus"></i> Add to
+                                                                                cart</a>
+                                                                        </div>
+                                                                        <div class="product-details-wishlist">
+                                                                            <a href="#"><i
+                                                                                    class="ion-ios-heart"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Product Modal end -->
+                                </div>
+                            </div>
+                            <pagination-template class="text-center" #p="paginationApi" [id]="config2.id!"
+                                (pageChange)="config2.currentPage = $event; backToPosition()">
+
+
+                                <div class="custom-pagination">
+                                    <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                                        <a *ngIf="!p.isFirstPage()" (click)="p.previous(); backToPosition()">
+                                        </a>
+                                    </div>
+
+                                    <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                                        <a (click)="p.setCurrent(page.value); backToPosition()"
+                                            *ngIf="p.getCurrent() !== page.value">
+                                            <span>{{ page.label }}</span>
+                                        </a>
+                                        <div *ngIf="p.getCurrent() === page.value">
+                                            <span>{{ page.label }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                                        <a *ngIf="!p.isLastPage()" (click)="p.next(); backToPosition()"> </a>
+                                    </div>
+                                </div>
+
+                            </pagination-template>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="sidebar-wrapper sidebar-wrapper-grid-4">
+                    <div class="sidebar-widget mb-40">
+                        <div class="sidebar-widget-title mb-20">
+                            <h3>Categories </h3>
+                        </div>
+                        <div class="sidebar-list-style-2">
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)" routerLink="/shop"
+                                        [queryParams]="{catalog: 'All Catalog'}">
+                                        All Catalog
+                                    </a>
+                                </li>
+                                <li *ngFor="let c of catalogList">
+                                    <a [ngClass]="{'cat-active': catalog == c.catalogName}" name=" cat"
+                                        href="javascript:void(0)" routerLink="/shop"
+                                        [queryParams]="{catalog: c.catalogName, color: color, size: size}">
+                                        {{c.catalogName}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget-wrap">
+                        <h2 class="mrg-dec">Filter By</h2>
+                        <div class="sidebar-widget mb-30">
+                            <div class="sidebar-widget-sub-title-2 mb-25">
+                                <h3>Color </h3>
+                            </div>
+                            <div class="sidebar-color-list sidebar-color-list-modify">
+                                <ul>
+                                    <li *ngFor="let c of colorList">
+                                        <a [title]="c.colorName" [class.color-active]="c.colorName == color"
+                                            [class.color-unactive]="c.colorName != color" [ngClass]="c.colorName"
+                                            routerLink="/shop"
+                                            [queryParams]="{catalog: catalog, color: c.colorName, size: size}"
+                                            href="javascript:void(0)">{{c.colorName}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget mb-40">
+                            <div class="sidebar-widget-sub-title-2 mb-25">
+                                <h3>Size </h3>
+                            </div>
+                            <div class="sidebar-size-list-2">
+                                <ul>
+                                    <li *ngFor="let s of sizeList">
+                                        <a href="javascrtip:void(0)" routerLink="/shop"
+                                            [class.size-active]="s.sizeName == size"
+                                            [queryParams]="{catalog: catalog, color: color, size: s.sizeName}">{{s.sizeName}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget mb-40">
+                            <div class="sidebar-widget-sub-title-2 mb-25">
+                                <h3>Price </h3>
+                            </div>
+                            <!-- <div class="price-filter price-filter-modify">
+                                <div id="slider-range"></div>
+                                <div class="price-slider-amount">
+                                    <span>Range: </span>
+                                    <input type="text" id="amount" name="price" placeholder="Add Your Price"/>
+                                </div>
+                            </div> -->
+                            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
+                                (userChange)="onUserChange($event)"></ngx-slider>
+                        </div>
+                        <div class="sidebar-widget mb-40">
+                            <div class="sidebar-widget-sub-title-2 mb-20">
+                                <h3>Features </h3>
+                            </div>
+                            <div class="sidebar-list-style">
+                                <ul>
+                                    <li><a href="#">Accessories</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Bags</a> <span><a href="#"> 3</a></span></li>
+                                    <li><a href="#">Clothings</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Cowboy</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Game</a> <span><a href="#"> 2</a></span></li>
+                                    <li><a href="#">Gloves</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Hats</a> <span><a href="#"> 3</a></span></li>
+                                    <li><a href="#">Jean's Collection</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Jeckets</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Patio</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Sandals</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Shaving</a> <span><a href="#"> 2</a></span></li>
+                                    <li><a href="#">Shoes</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">Super Sunglasses</a> <span><a href="#"> 1</a></span></li>
+                                    <li><a href="#">T-Shirt's Collection</a> <span><a href="#"> 4</a></span></li>
+                                    <li><a href="#">Watches</a> <span><a href="#"> 4</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <div class="sidebar-widget-title mb-25">
+                            <h3>Recent Products </h3>
+                        </div>
+                        <div class="sidebar-product-wrap">
+                            <div class="single-sidebar-product">
+                                <div class="sidebar-product-img">
+                                    <a href="product-details.html"><img src="assets/images/product/shop-sidebar-1.jpg"
+                                            alt=""></a>
+                                </div>
+                                <div class="sidebar-product-content">
+                                    <h4><a href="product-details.html">Longline T-Shirt In Lined Fabric</a></h4>
+                                    <span> $31.00 – $34.00</span>
+                                </div>
+                            </div>
+                            <div class="single-sidebar-product">
+                                <div class="sidebar-product-img">
+                                    <a href="product-details.html"><img src="assets/images/product/shop-sidebar-2.jpg"
+                                            alt=""></a>
+                                </div>
+                                <div class="sidebar-product-content">
+                                    <h4><a href="product-details.html"> T-shirt International</a></h4>
+                                    <span> $35.00 – $37.00</span>
+                                </div>
+                            </div>
+                            <div class="single-sidebar-product">
+                                <div class="sidebar-product-img">
+                                    <a href="product-details.html"><img src="assets/images/product/shop-sidebar-3.jpg"
+                                            alt=""></a>
+                                </div>
+                                <div class="sidebar-product-content">
+                                    <h4><a href="product-details.html">Satchel In Grey Dawson Backpack</a></h4>
+                                    <span> $40.00 – $42.00</span>
+                                </div>
+                            </div>
+                            <div class="single-sidebar-product">
+                                <div class="sidebar-product-img">
+                                    <a href="product-details.html"><img src="assets/images/product/shop-sidebar-4.jpg"
+                                            alt=""></a>
+                                </div>
+                                <div class="sidebar-product-content">
+                                    <h4><a href="product-details.html">Nike Heritage Herschel backpack</a></h4>
+                                    <span> $43.00 – $45.00</span>
+                                </div>
+                            </div>
+                            <div class="single-sidebar-product">
+                                <div class="sidebar-product-img">
+                                    <a href="product-details.html"><img src="assets/images/product/shop-sidebar-5.jpg"
+                                            alt=""></a>
+                                </div>
+                                <div class="sidebar-product-content">
+                                    <h4><a href="product-details.html">Set Supreme Cap</a></h4>
+                                    <span> $52.00 – $55.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

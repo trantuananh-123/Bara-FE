@@ -1,0 +1,82 @@
+html {
+    scroll-behavior: smooth !important;
+}
+
+.form-select {
+    width: 70% !important;
+}
+
+.form-select:focus {
+    background: rgba(0, 0, 0, 0) url("../../../assets/images/icon-img/arrow-up-1.png") no-repeat scroll right 5px center !important;
+}
+
+.form-select:not(:focus) {
+    background: rgba(0, 0, 0, 0) url("../../../assets/images/icon-img/arrow-down-3.png") no-repeat scroll right 5px center !important;
+}
+
+.test {
+    display         : inline-block !important;
+    background-color: #900 !important;
+    text-align      : center !important;
+    font-size       : 25px !important;
+    width           : 40px !important;
+    height          : 40px !important;
+    line-height     : 40px !important;
+    color           : #ffffff !important;
+    font-size       : 25px !important;
+    text-align      : center !important;
+    padding         : 5px 10px !important;
+    border          : none !important;
+    margin          : 0px 5px !important;
+    border-radius   : 100% !important;
+}
+
+.cat-active {
+    color: #f51717 !important;
+}
+
+.cat-unactive {
+    color: #000000 !important;
+}
+
+.color-active {
+    border : 4px solid purple !important;
+    opacity: 1 !important;
+}
+
+.color-unactive {
+    border : inherit !important;
+    opacity: 0.3 !important;
+}
+
+.size-active {
+    background-color: #900 !important;
+    color           : #ffffff !important;
+}
+
+.custom-pagination .page-number {
+    display      : inline-block;
+    /* padding   : 5px 12px; */
+    background   : #afffe6;
+    margin       : 0px 4px;
+    border-radius: 25px;
+}
+
+.custom-pagination {
+    align-items    : baseline !important;
+    display        : flex !important;
+    text-align     : center !important;
+    justify-content: center !important;
+}
+
+.custom-pagination span {
+    color        : #999 !important;
+    border-bottom: 1px solid transparent !important;
+    font-size    : 18px !important;
+    margin-right : 10px !important;
+}
+
+.custom-pagination .current span {
+    color        : #000000 !important;
+    border-bottom: 1px solid #1D1D1D !important;
+}

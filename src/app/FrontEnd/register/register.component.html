@@ -1,0 +1,144 @@
+<div class="breadcrumb-area section-padding-1 breadcrumb-ptb-1">
+    <div class="container-fluid">
+        <div class="breadcrumb-content text-center">
+            <h2 class="mrg">Register </h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><i class="ion-ios-arrow-right"></i></li>
+                <li>Register</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="login-register-area pb-120">
+    <div class="container">
+        <div class="login-register-content">
+            <h3>Create your own account <a routerLink="/register">now</a></h3>
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="required-field">Username: </div>
+                        <div class="login-register-input">
+                            <input type="text" class="form-control" placeholder="Username" formControlName="username"
+                                id="username" (change)="checkUser($event)">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="registrationForm.get('username')!.invalid
+                        && registrationForm.get('username')!.touched">
+                            <div *ngIf="registrationForm.get('username')!.errors!.required">
+                                Username is required!
+                            </div>
+                            <div *ngIf="registrationForm.get('username')!.errors!.unique">
+                                Username is already taken!
+                            </div>
+                            <div *ngIf="registrationForm.get('username')!.errors!.minlength">
+                                Username must be at least 6 characters!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="required-field">Password: </div>
+                        <div class="login-register-input">
+                            <input type="password" class="form-control" placeholder="Password"
+                                formControlName="password" id="password">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="registrationForm.get('password')!.invalid
+                        && registrationForm.get('password')!.touched">
+                            <div *ngIf="registrationForm.get('password')!.errors!.required">
+                                Password is required!
+                            </div>
+                            <div *ngIf="registrationForm.get('password')!.errors!.minlength">
+                                Password must be at least 8 characters!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="required-field">Email: </div>
+                        <div class="login-register-input">
+                            <input type="email" class="form-control" placeholder="Email Address" formControlName="email"
+                                id="email" (change)="checkEmail($event)">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="registrationForm.get('email')!.invalid
+                    && registrationForm.get('email')!.touched">
+                            <div *ngIf="registrationForm.get('email')!.errors!.required">
+                                Please enter a valid email!
+                            </div>
+                            <div *ngIf="registrationForm.get('email')!.errors!.unique">
+                                Email is already taken!
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- <div class="required-field">Phone: </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="login-register-input">
+                            <input type="tel" class="form-control" placeholder="Phone Number" formControlName="phone"
+                                id="phone">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="registrationForm.get('phone')!.invalid
+                    && registrationForm.get('phone')!.touched">
+                            <div *ngIf="registrationForm.get('phone')!.errors!.required">
+                                Phone number is required!
+                            </div>
+                            <div *ngIf="registrationForm.get('phone')!.errors!.pattern">
+                                Phone number must be at least 11 number!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="login-register-input">
+                            <input type="text" class="form-control" placeholder="Address" formControlName="address"
+                                id="address">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="login-register-input">
+                            <input type="text" class="form-control" placeholder="Avatar" formControlName="avatar"
+                                id="avatar">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="login-register-input">
+                            <input type="text" class="form-control" placeholder="Balance" formControlName="balance"
+                                id="balance">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="required-field">DOB: </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="login-register-input">
+                            <input type="date" class="form-control" placeholder="DOB" formControlName="dob" id="dob">
+                        </div>
+                        <div class="alert alert-danger" *ngIf="registrationForm.get('dob')!.invalid
+                    && registrationForm.get('dob')!.touched">
+                            DOB is required!
+                        </div>
+                    </div>
+                </div> -->
+                <div class="login-register-btn">
+                    <input [disabled]="registrationForm.invalid" type="submit" class="btn" value="Register">
+                </div>
+                <div class="alert alert-success" *ngIf="isRegistered">
+                    Your registration is successful!
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

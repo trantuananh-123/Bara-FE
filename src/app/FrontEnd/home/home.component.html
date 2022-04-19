@@ -1,0 +1,595 @@
+<div class="hero-area youtube-video-area">
+    <div class="youtube-video-bg player"></div>
+    <div class="youtube-bg-content-wrap">
+        <div class="container">
+            <div class="hero-content-10">
+                <span>MR.BARA’S LIPSTICK</span>
+                <h2>Adorn Your Lips <br> So Charming </h2>
+                <div class="btn-style-9">
+                    <a class="white" href="product-details.html">SHOP NOW <i class="ion-android-arrow-forward"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="brand-logo-area pt-120 pb-85">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-7.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-8.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-9.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-10.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-11.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-30">
+                <div class="single-brand-logo">
+                    <img src="../../../assets/images/brand-logo/brand-logo-12.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-category pb-80">
+    <div class="container">
+        <div class="section-title-7 mb-55 text-center">
+            <h2>Our Collections</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu quam ac nisl iaculislmetu Ulmi Donec
+                lacus neque, convallis ut ex ac, venenatis</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="single-category-wrap mb-30">
+                    <div class="category-img mb-30">
+                        <a routerLink="/shop"><img class="hover-img"
+                                src="../../../assets/images/category/category-img-1.jpg" alt=""></a>
+                    </div>
+                    <div class="category-title-1 text-center">
+                        <h3><a href="shop.html">LIP’S COLLECTION</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="single-category-wrap mb-30">
+                    <div class="category-img mb-30">
+                        <a href="shop.html"><img class="hover-img"
+                                src="../../../assets/images/category/category-img-2.jpg" alt=""></a>
+                    </div>
+                    <div class="category-title-1 text-center">
+                        <h3><a href="shop.html">FACE’S COLLECTION</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="single-category-wrap mb-30">
+                    <div class="category-img mb-30">
+                        <a href="shop.html"><img class="hover-img"
+                                src="../../../assets/images/category/category-img-3.jpg" alt=""></a>
+                    </div>
+                    <div class="category-title-1 text-center">
+                        <h3><a href="shop.html">EDITORS’S PICKS</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product-area pb-120">
+    <div class="container">
+        <div class="section-title-7 mb-15 text-center">
+            <h2>Best Sellers Products</h2>
+        </div>
+        <div class="tab-style-2 nav mb-55">
+            <a class="active" href="#pro-4" data-bs-toggle="tab">All </a>
+            <a href="#pro-5" data-bs-toggle="tab" class="">Giày thể thao </a>
+            <a href="#pro-6" data-bs-toggle="tab" class="">Đồng hồ </a>
+        </div>
+        <div class="tab-content jump-2">
+            <div id="pro-4" class="tab-pane active">
+                <div class="product-slider-active-4 swiper-container nav-style-4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let p of productList">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="{{p.productImgs[0]}}" alt="">
+                                        <img class="hover-img" src="{{p.productImgs[1]}}" alt="">
+                                    </a>
+                                    <div *ngIf="p.productIsHot" class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a [routerLink]="['/product', p.productId]">{{p.productName}}</a></h3>
+                                    <div class="product-price-2">
+                                        <span>{{p.productPriceOut | currency}}</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="javascript:void(0)" (click)="buy(p)"><i
+                                            class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prev-1 product-nav-1"> <i class="ion-ios-arrow-left"></i></div>
+                    <div class="product-next-1 product-nav-1"> <i class="ion-ios-arrow-right"></i></div>
+                </div>
+                <div class="all-products-btn mt-20 text-center">
+                    <a href="shop.html">Browse all products</a>
+                </div>
+            </div>
+            <div id="pro-5" class="tab-pane">
+                <div class="product-slider-active-4 swiper-container nav-style-4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-32.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-32-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">NARS Mascara</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$24.00</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-31.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-31-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">CIATE Palermo Lipstick</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$65.20</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-30.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-30-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Poreless Putty Perfector</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$85.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-29.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-29-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Nail Polish Makeup</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$18.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-28.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-28-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Loose Face Powdes</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$21.57</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prev-1 product-nav-1"> <i class="ion-ios-arrow-left"></i></div>
+                    <div class="product-next-1 product-nav-1"> <i class="ion-ios-arrow-right"></i></div>
+                </div>
+                <div class="all-products-btn mt-20 text-center">
+                    <a href="shop.html">Browse all products</a>
+                </div>
+            </div>
+            <div id="pro-6" class="tab-pane">
+                <div class="product-slider-active-4 swiper-container nav-style-4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-30.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-30-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">NARS Mascara</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$24.00</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-31.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-31-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">CIATE Palermo Lipstick</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$65.20</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-29.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-29-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Poreless Putty Perfector</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$85.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-32.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-32-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Nail Polish Makeup</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$18.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-28.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-28-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Loose Face Powdes</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$21.57</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prev-1 product-nav-1"> <i class="ion-ios-arrow-left"></i></div>
+                    <div class="product-next-1 product-nav-1"> <i class="ion-ios-arrow-right"></i></div>
+                </div>
+                <div class="all-products-btn mt-20 text-center">
+                    <a href="shop.html">Browse all products</a>
+                </div>
+            </div>
+            <div id="pro-7" class="tab-pane">
+                <div class="product-slider-active-4 swiper-container nav-style-4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-29.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-29-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">NARS Mascara</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$24.00</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-28.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-28-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">CIATE Palermo Lipstick</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$65.20</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-31.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-31-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Poreless Putty Perfector</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$85.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-30.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-30-2.jpg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Nail Polish Makeup</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$18.99</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-wrap">
+                                <div class="product-img mb-20">
+                                    <a href="product-details.html">
+                                        <img class="default-img" src="../../../assets/images/product/product-32.jpg"
+                                            alt="">
+                                        <img class="hover-img" src="../../../assets/images/product/product-32-2.jpg"
+                                            alt="">
+                                    </a>
+                                    <div class="product-badge">
+                                        <span>Hot</span>
+                                    </div>
+                                </div>
+                                <div class="product-content product-content-modify text-center">
+                                    <h3><a href="product-details.html">Loose Face Powdes</a></h3>
+                                    <div class="product-price-2">
+                                        <span>$21.57</span>
+                                    </div>
+                                </div>
+                                <div class="product-action-3 product-action-3-pink text-center">
+                                    <a title="Add to cart" href="#"><i class="ion-plus"></i> Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-prev-1 product-nav-1"> <i class="ion-ios-arrow-left"></i></div>
+                    <div class="product-next-1 product-nav-1"> <i class="ion-ios-arrow-right"></i></div>
+                </div>
+                <div class="all-products-btn mt-20 text-center">
+                    <a href="shop.html">Browse all products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner-area jarallax parallax-img pt-200 pb-200"
+    style="background-image:url(../../../assets/images/bg/bg-1.jpg)">
+    <div class="container">
+        <div class="banner-content-2 text-center">
+            <h2>Beauty <br> Inspiration Color</h2>
+            <h3>New in our lookbook ?</h3>
+        </div>
+    </div>
+</div>
+<div class="blog-area pt-115 pb-80">
+    <div class="container">
+        <div class="section-title-7 text-center mb-50">
+            <h2>Our Tips & Tricks</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-blog-2 bg-white mb-30">
+                    <div class="blog-img">
+                        <a href="blog-details.html"><img src="../../../assets/images/blog/blog-1.jpg" alt="blog"></a>
+                    </div>
+                    <div class="blog-content-2 blog-content-2-padding text-center">
+                        <h3><a href="blog-details.html">How To: Strobe Like A Pro In Seconds</a></h3>
+                        <div class="btn-style-10">
+                            <a href="blog-details.html">Read more <i class="ion-ios-arrow-forward"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-blog-2 bg-white mb-30">
+                    <div class="blog-img">
+                        <a href="blog-details.html"><img src="../../../assets/images/blog/blog-2.jpg" alt="blog"></a>
+                    </div>
+                    <div class="blog-content-2 blog-content-2-padding text-center">
+                        <h3><a href="blog-details.html">Makeup Beautiful & Stunning Like A Princess</a></h3>
+                        <div class="btn-style-10">
+                            <a href="blog-details.html">Read more <i class="ion-ios-arrow-forward"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="single-blog-2 bg-white mb-30">
+                    <div class="blog-img">
+                        <a href="blog-details.html"><img src="../../../assets/images/blog/blog-3.jpg" alt="blog"></a>
+                    </div>
+                    <div class="blog-content-2 blog-content-2-padding text-center">
+                        <h3><a href="blog-details.html">Your Skin Highlight More With Orchird Flower</a></h3>
+                        <div class="btn-style-10">
+                            <a href="blog-details.html">Read more <i class="ion-ios-arrow-forward"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="newsletter-area pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-title-7 text-center mb-55">
+                    <h2>Get Discount Info</h2>
+                    <p>Subscribe our newsletter for get notification about new ut new updates, information discount,
+                        etc.</p>
+                </div>
+                <div id="mc_embed_signup" class="subscribe-form-4">
+                    <form id="mc-embedded-subscribe-form" class="validate subscribe-form-style-4" novalidate=""
+                        target="_blank" name="mc-embedded-subscribe-form" method="post"
+                        action="https://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef">
+                        <div id="mc_embed_signup_scroll" class="mc-form-4 input-bg-gray">
+                            <input class="email" type="email" required="" placeholder="Email Address" name="EMAIL"
+                                value="">
+                            <div class="mc-news-4" aria-hidden="true">
+                                <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef">
+                            </div>
+                            <div class="clear-4">
+                                <input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe"
+                                    value="Subscribe">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

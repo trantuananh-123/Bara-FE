@@ -1,0 +1,7 @@
+<div class="main-wrapper main-wrapper-2">
+  <app-header *ngIf="!(router.url.includes('/404') || router.url.includes('/admin') || router.url.includes('/403'))">
+  </app-header>
+  <router-outlet ></router-outlet>
+  <app-footer *ngIf="!(router.url.includes('/404') || router.url.includes('/admin') || router.url.includes('/403'))">
+  </app-footer>
+</div>

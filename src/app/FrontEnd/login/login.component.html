@@ -1,0 +1,284 @@
+<div *ngIf="!loggedIn()">
+    <div class="breadcrumb-area section-padding-1 breadcrumb-ptb-1">
+        <div class="container-fluid">
+            <div class="breadcrumb-content text-center">
+                <h2 class="mrg">Login</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><i class="ion-ios-arrow-right"></i></li>
+                    <li>Login</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="login-register-area pb-120">
+        <div class="container">
+            <div class="login-register-content">
+                <h3>Log in your account</h3>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-4">
+                            <div class="login-register-input">
+                                <input type="text" placeholder="Username" formControlName="username" name="username">
+                            </div>
+                            <div class="alert alert-danger" *ngIf="loginForm.get('username')!.invalid
+                            && loginForm.get('username')!.touched">
+                                <div *ngIf="loginForm.get('username')!.errors!.required">
+                                    Username is required!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-4">
+                            <div class="login-register-input">
+                                <input type="password" placeholder="Password" formControlName="password"
+                                    name="password">
+                            </div>
+                            <div class="alert alert-danger" *ngIf="loginForm.get('password')!.invalid
+                            && loginForm.get('password')!.touched">
+                                <div *ngIf="loginForm.get('password')!.errors!.required">
+                                    Password is required!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4">
+                            <div class="login-register-btn">
+                                <input [disabled]="loginForm.invalid" type="submit" class="button" value="Login">
+                            </div>
+                            <div class="alert alert-success" *ngIf="submitted && isLogin">
+                                Login succesfully
+                            </div>
+                            <div class="alert alert-warning" *ngIf="submitted && isLoginFailed">
+                                Login failed - {{ errorMessage }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="keep-forgot-wrap">
+                        <div class="keep-wrap checkout-checkbox-style-3">
+                            <input type="checkbox" name="remember-me" (change)="isChecked($event)">
+                            <p>Keep me logged in</p>
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="forget-wrap">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="login-register-content">
+                <h3>Don't have an Account? Register <a routerLink="/register"><u>now</u></a></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="loggedIn()">
+    <div class="breadcrumb-area section-padding-1 breadcrumb-ptb-1">
+        <div class="container-fluid">
+            <div class="breadcrumb-content text-center">
+                <h2>My Account</h2>
+            </div>
+        </div>
+    </div>
+    <div class="my-account-area pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="myaccount-tab-menu nav" role="tablist">
+                        <a href="#dashboad" class="active" data-bs-toggle="tab">Dashboard</a>
+                        <a href="#orders" data-bs-toggle="tab">Orders</a>
+                        <a href="#download" data-bs-toggle="tab">Download</a>
+                        <a href="#payment-method" data-bs-toggle="tab">Payment Method</a>
+                        <a href="#address-edit" data-bs-toggle="tab">Address</a>
+                        <a href="#account-info" data-bs-toggle="tab">Account Details</a>
+                        <a href="login-register.html">Logout</a>
+                    </div>
+                </div>
+                <!-- My Account Tab Menu End -->
+                <!-- My Account Tab Content Start -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="tab-content" id="myaccountContent">
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Dashboard</h3>
+                                <div class="welcome">
+                                    <p>Hello, <strong>{{username}} (Click on Account Details to update your
+                                            information)</strong></p>
+                                </div>
+
+                                <p class="mb-0">From your account dashboard. you can easily check & view your recent
+                                    orders, manage your shipping and billing addresses and edit your password and
+                                    account details.</p>
+
+                                <!-- <ul>
+                                    <li>{{email}}</li>
+                                    <li>{{phone}}</li>
+                                    <li>{{address}}</li>
+                                    <li>{{avatar}}</li>
+                                    <li>{{balance}}</li>
+                                    <li>{{dob | date: 'dd/MM/yyyy'}}</li>
+                                </ul> -->
+
+
+                            </div>
+                        </div>
+                        <!-- Single Tab Content End -->
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade" id="orders" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Orders</h3>
+                                <div class="myaccount-table table-responsive text-center">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Order</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Total</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Aug 22, 2018</td>
+                                                <td>Pending</td>
+                                                <td>$3000</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td>2</td>
+                                                <td>July 22, 2018</td>
+                                                <td>Approved</td>
+                                                <td>$200</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>June 12, 2017</td>
+                                                <td>On Hold</td>
+                                                <td>$990</td>
+                                                <td><a href="cart.html" class="check-btn sqr-btn ">View</a></td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Tab Content End -->
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade" id="download" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Downloads</h3>
+                                <div class="myaccount-table table-responsive text-center">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Date</th>
+                                                <th>Expire</th>
+                                                <th>Download</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Haven - Free Real Estate PSD Template</td>
+                                                <td>Aug 22, 2018</td>
+                                                <td>Yes</td>
+                                                <td><a href="#" class="check-btn sqr-btn "><i
+                                                            class="fa fa-cloud-download"></i> Download File</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>HasTech - Profolio Business Template</td>
+                                                <td>Sep 12, 2018</td>
+                                                <td>Never</td>
+                                                <td><a href="#" class="check-btn sqr-btn "><i
+                                                            class="fa fa-cloud-download"></i> Download File</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Tab Content End -->
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade" id="payment-method" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Payment Method</h3>
+                                <p class="saved-message">You Can't Saved Your Payment Method yet.</p>
+                            </div>
+                        </div>
+                        <!-- Single Tab Content End -->
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade" id="address-edit" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Billing Address</h3>
+                                <address>
+                                    <p><strong>Alex Tuntuni</strong></p>
+                                    <p>1355 Market St, Suite 900 <br>
+                                        San Francisco, CA 94103</p>
+                                    <p>Mobile: (123) 456-7890</p>
+                                </address>
+                                <a href="#" class="check-btn sqr-btn "><i class="fa fa-edit"></i> Edit Address</a>
+                            </div>
+                        </div>
+                        <!-- Single Tab Content End -->
+                        <!-- Single Tab Content Start -->
+                        <div class="tab-pane fade" id="account-info" role="tabpanel">
+                            <div class="myaccount-content">
+                                <h3>Account Details</h3>
+                                <div class="account-details-form">
+                                    <form role="form" [formGroup]="frmUserUp" (ngSubmit)="updateUser()"
+                                        class="floating-labels">
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="username">
+                                            <span class="bar"></span>
+                                            <label>Username </label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="email">
+                                            <span class="bar"></span>
+                                            <label>Email </label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="phone">
+                                            <span class="bar"></span>
+                                            <label>Phone Number </label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="address">
+                                            <span class="bar"></span>
+                                            <label>Address </label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="avatar">
+                                            <span class="bar"></span>
+                                            <label>Avatar</label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="text" class="form-control" formControlName="balance">
+                                            <span class="bar"></span>
+                                            <label>Balance </label>
+
+                                        </div>
+                                        <div class="form-group m-b-40">
+                                            <input type="date" formControlName="dob">
+                                            <label>DOB </label>
+                                            <span class="bar"></span>
+                                        </div>
+                                        <button class="btn btn-success">Update</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> <!-- Single Tab Content End -->
+                    </div>
+                </div> <!-- My Account Tab Content End -->
+            </div>
+        </div>
+    </div>
+</div>

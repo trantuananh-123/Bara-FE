@@ -1,0 +1,8 @@
+div.disabled {
+    cursor: not-allowed;
+}
+
+a.disabled {
+    background-color: gray;
+    pointer-events  : none;
+}

@@ -1,0 +1,26 @@
+.filter-search li {
+    padding: 10px 10px 10px 27px;
+}
+
+.search-style-2 ul:first-child {
+    margin-top: 10px;
+}
+
+.search-item {
+    position  : absolute;
+    width     : 409px;
+    z-index   : 9999;
+    top       : 51px;
+    background: white;
+    box-shadow: 0px 1px 24px 0px rgb(0 0 0 / 9%);
+    border    : 1px solid #ccc;
+}
+
+.search-style-2 form input {
+    padding: 2px 0 2px 27px !important;
+}
+
+.search-style-2 form button {
+    right: 27px;
+    left : unset !important;
+}

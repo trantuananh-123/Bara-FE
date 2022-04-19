@@ -1,0 +1,73 @@
+.left-sidebar {
+    overflow: hidden !important;
+}
+
+.scroll-sidebar:hover {
+    overflow-y: scroll !important;
+}
+
+::-webkit-scrollbar {
+    /* Remove scrollbar space */
+    width      : 0;
+    /* Optional: just make scrollbar invisible */
+    background : transparent;
+}
+
+
+p-table ul li {
+    align-self: center !important;
+}
+
+i {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100% !important;
+}
+
+p-dialog input:not([type="checkbox"]),
+p-dialog textarea,
+p-dialog p-inputNumber {
+    width : 100% !important;
+    border: 1px solid #ced4da !important;
+    color : #495057 !important;
+}
+
+.p-toolbar {
+    background   : #eff3f8 !important;
+    border       : 1px solid #dfe7ef !important;
+    padding      : 1.25rem !important;
+    border-radius: 6px !important;
+}
+
+.product-badge {
+    border-radius : 2px;
+    padding       : .25em .5rem;
+    text-transform: uppercase;
+    font-weight   : 700;
+    font-size     : 12px;
+    letter-spacing: .3px;
+}
+
+.product-badge.status-instock {
+    background: #c8e6c9 !important;
+    color     : #256029 !important;
+}
+
+.product-badge.status-outofstock {
+    background: #ffcdd2 !important;
+    color     : #c63737 !important;
+}
+
+.required-field {
+    color: red
+}
+
+div.disabled {
+    cursor: not-allowed;
+}
+
+button.disabled {
+    pointer-events: none;
+}

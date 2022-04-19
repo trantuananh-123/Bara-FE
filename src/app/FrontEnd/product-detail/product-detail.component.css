@@ -1,0 +1,22 @@
+.swiper-slide {
+    margin-right: 0 !important;
+}
+
+.color-name {
+    font-style : normal !important;
+    font-weight: bold !important;
+}
+
+.additional-information-content ul li {
+    border      : none !important;
+    margin-right: 15px
+}
+
+.additional-information-content .row {
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+.color-name,
+.size-name {
+    padding: 9px 0 !important;
+}

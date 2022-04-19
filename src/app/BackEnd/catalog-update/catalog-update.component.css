@@ -1,0 +1,14 @@
+.left-sidebar {
+    overflow: hidden !important;
+}
+
+.scroll-sidebar:hover {
+    overflow-y: scroll !important;
+}
+
+::-webkit-scrollbar {
+    /* Remove scrollbar space */
+    width      : 0;
+    /* Optional: just make scrollbar invisible */
+    background : transparent;
+}
